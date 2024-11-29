@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Buzoiană</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #f59b42; 
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category h2,
+        .about-us h2 {
+            font-size: 24px;
+            color: #fff; 
+            background-color: #f59b42; 
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .about-us {
+            border: 1px solid #fff; 
+            background-color: #f59b42; 
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .about-us p {
+            font-size: 16px;
+            color: #fff; /* Text alb pentru descriere */
+            margin-top: 10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .product:hover {
+            background-color: #f0f0f0;
+        }
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+        }
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+        .description {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .description p {
+            font-size: 14px;
+            color: #444;
+        }
+        .description span {
+            font-weight: bold;
+        }
+
+        /* Meniul de navigație */
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff7f00; /* Meniul portocaliu */
+            padding: 10px 20px;
+        }
+        header nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px;
+        }
+        header nav h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+        header nav a:hover {
+            background-color: #ff5f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Secțiunea Despre Noi -->
+        <div class="about-us">
+            <h2>Despre Noi</h2>
+            <p>Casa Buzoiană este o firmă dedicată promovării și comercializării produselor tradiționale din regiunea Buzău. Oferind o gamă variată de delicatese autentice, precum brânzeturi, mezeluri, dulcețuri și preparate din carne, Casa Buzoiană aduce gusturile tradiționale aproape de fiecare client. Misiunea companiei este de a păstra vie tradiția gastronomică a zonei, oferind produse de calitate, realizate după rețete autentice și cu ingrediente locale.</p>
+        </div>
+
+        <!-- Secțiunea Produse Tradiționale din Buzău -->
+        <h1>Produse Tradiționale din Buzău</h1>
+
+        <div class="category">
+            <h2>Carne & Mezeluri</h2>
+            <div class="product-grid">
+                <div class="product" onclick="toggleDescription('pastrama_oaie')">
+            <img src="imagine_pastrama.jpg" alt="Pastramă de oaie" style="width: 100%; height: auto; border-radius: 5px;">       
+                    <h3>Pastramă de oaie 🍖</h3>
+                    <p>72,55 lei/kg</p>
+                    <div id="pastrama_oaie" class="description">
+                        <p><span>Descriere:</span> Pastrama din Muntenia, o metodă tradițională de conservare a cărnii de oaie, este marinată și afumată, apoi servită pe grătar alături de mămăligă. Are o aromă intensă și deosebită.</p>
+
+                    </div>
+                </div>
+    
+          
+  <div class="product" onclick="toggleDescription('pastrama_vita')">
+                 <img src="pastrama de vita.jpeg" alt="pastrama de vita" style="width: 100%; height: auto; border-radius: 5px;"> 
+  <h3>Pastramă de vită 🍖</h3>
+                    <p>100 lei/kg</p>
+                    <div id="pastrama_vita" class="description">
+                        <p><span>Descriere:</span> Pastrama de vită din Buzău are origini pastorale, fiind creată de ciobanii din Muntenia pentru a conserva carnea în perioadele reci. Preparată prin marinare cu sare, usturoi și condimente, apoi afumată, pastrama s-a transmis din generație în generație.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('carnati_plescoi')">
+<img src="carnati de plescoi.jpeg" alt="carnati de plescoi" style="width: 100%; height: auto; border-radius: 5px;">                   
+ <h3>Cârnați de Pleșcoi 🍖</h3>
+                    <p>50 lei/Kg</p>
+                    <div id="carnati_plescoi" class="description">
+                        <p><span>Descriere:</span> Rețeta cârnaților de Pleşcoi aparţine zarzavagiilor sârbi din secolul XIX, adaptată cu condimente puternice pentru a intensifica gustul. Cârnații sunt afumați și uscați până capătă o consistență deosebită.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('babic')">
+                   <img src="babic.jpeg" alt="babic" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Babic 🍖</h3>
+                    <p>70 lei/Kg</p>
+                    <div id="babic" class="description">
+                        <p><span>Descriere:</span> Babicul de Buzău este un produs din carne de vită și oaie, afumat și condimentat, provenind din rețetele comunităților bulgărești stabilite în zonă.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('toba')">
+                   <img src="toba de casa.jpeg" alt="Tobă de casă" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Tobă de casă 🍖</h3>
+                    <p>60 lei/Kg</p>
+                    <div id="toba" class="description">
+                        <p><span>Descriere:</span> În satele din Transilvania, toba era preparată cu grijă în fiecare iarnă, fiind un amestec de carne, limbă și organe, fierte și condimentate. Gustul său autentic aduce aminte de tradițiile de sărbătoare.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('slanina')">
+                  <img src="slanina afumata.jpeg" alt="Slănină afumată" style="width: 100%; height: auto; border-radius: 5px;">  
+<h3>Slănină afumată 🥓</h3>
+                    <p>40 lei/Kg</p>
+                    <div id="slanina" class="description">
+                        <p><span>Descriere:</span> Slănina afumată din stratul de grăsime al porcului este un produs tradițional apreciat pentru savoarea sa. Era esențială în dieta țăranilor pe timpul iernii.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('rulada_porc')">
+                   <img src="Ruladă de piept de porc.jpeg" alt="Ruladă de piept de porc" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Ruladă de piept de porc 🍖</h3>
+                    <p>70 lei/Kg</p>
+                    <div id="rulada_porc" class="description">
+                        <p><span>Descriere:</span> Rulada de piept de porc din Buzău provine din tradițiile locale, fiind preparată prin rulare, condimentare și afumare lentă. Este un simbol al priceperii buzoienilor în prelucrarea cărnii.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('sangerete')">
+                    <img src="sangerete.jpeg" alt="Sangerete" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Sângerete 🍽️</h3>
+                    <p>45 lei/Kg</p>
+                    <div id="sangerete" class="description">
+                        <p><span>Descriere:</span> Produs din sânge de porc, carne și slănină, sângeretele este specific perioadei de iarnă și are o savoare aparte, consumat alături de ceapă și murături.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('sunca')">
+                    <img src="Șuncă țărănească de casă.jpeg" alt="Șuncă țărănească de casă" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Șuncă țărănească de casă 🥩</h3>
+                    <p>60 lei/Kg</p>
+                    <div id="sunca" class="description">
+                        <p><span>Descriere:</span> Șunca țărănească de casă din Buzău este un produs tradițional autentic, cu o istorie adânc înrădăcinată în obiceiurile și cultura rurală a regiunii. Prepararea acesteia presupune o combinație de meșteșug, ingrediente naturale și tehnici tradiționale de conservare a cărnii.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('caltabos')">
+                  <img src="Caltaboș.jpeg" alt="Caltaboș" style="width: 100%; height: auto; border-radius: 5px;"> 
+ <h3>Caltaboș 🍖</h3>
+                    <p>70 lei/Kg</p>
+                    <div id="caltabos" class="description">
+                        <p><span>Descriere:</span> Caltaboșul de Buzău este un produs tradițional al regiunii, care face parte din categoria preparatelor din carne de porc, fiind preparat cu ocazia sacrificării porcului în perioada Crăciunului sau în alte ocazii de sărbătoare.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('lebar')">
+                  <img src="Lebăr.jpeg" alt="Lebăr" style="width: 100%; height: auto; border-radius: 5px;">
+  <h3>Lebăr 🍖</h3>
+                    <p>65 lei/Kg</p>
+                    <div id="lebar" class="description">
+                        <p><span>Descriere:</span> Lebărul este un produs din carne de porc și organe, condimentat cu ierburi aromatice, un preparat deosebit care se consumă în mod tradițional în perioada sărbătorilor.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('jumari')">
+                   <img src="Jumări de porc.jpeg" alt="Jumări de porc" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Jumări de porc 🥓</h3>
+                    <p>40 lei/Kg</p>
+                    <div id="jumari" class="description">
+                        <p><span>Descriere:</span> Jumările sunt un produs din grăsime de porc topită, folosit în preparatele tradiționale românești. Acestea au un gust intens și se consumă adesea alături de mămăligă sau pâine de casă.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('salam_crud_uscat')">
+                  <img src="Salam crud-uscat.jpeg" alt="Salam crud-usca" style="width: 100%; height: auto; border-radius: 5px;">
+  <h3>Salam crud-uscat 🧀</h3>
+                    <p>80 lei/kg</p>
+                    <div id="salam_crud_uscat" class="description">
+                        <p><span>Descriere:</span> Salam crud-uscat preparat din carne de porc sau vită, cu o aromă deosebită, adesea afumat și uscat pentru o perioadă mai lungă de timp.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('salam_picant')">
+                  <img src="salam picant.jpeg" alt="Salam picant" style="width: 100%; height: auto; border-radius: 5px;">
+  <h3>Salam picant 🌶️</h3>
+                    <p>70 lei/kg</p>
+                    <div id="salam_picant" class="description">
+                        <p><span>Descriere:</span> Un salam delicios și ușor picant, realizat cu ierburi și condimente tradiționale, care oferă o aromă intensă și o experiență de gust deosebită.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('salam_afumat')">
+                   <img src="Salam afumat.jpeg" alt="Salam afumat" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Salam afumat 🍖</h3>
+                    <p>60 lei/kg</p>
+                    <div id="salam_afumat" class="description">
+                        <p><span>Descriere:</span> Salam afumat din carne de porc, cu o aromă puternică de fum natural. Acesta este un produs care păstrează tradițiile din Buzău în fiecare felie.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('parizer')">
+                    <img src="Parizer porc.jpeg" alt="Parizer Porc" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Parizer porc 🍞</h3>
+                    <p>30 lei/kg</p>
+                    <div id="parizer" class="description">
+                        <p><span>Descriere:</span> Parizerul din carne de porc este un produs accesibil, dar savuros, folosit adesea în sandvișuri sau ca gustare la mesele de zi cu zi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            desc.style.display = (desc.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lactate & Băuturi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .category {
+            margin-bottom: 30px;
+            background-color: #FFA500; /* Fundal portocaliu pentru secțiunea de categorie */
+            padding: 20px;
+            border: 2px solid #000; /* Chenar negru */
+            border-radius: 8px;
+        }
+        .category h2 {
+            font-size: 24px;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #000; /* Chenar negru pentru produs */
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .product:hover {
+            background-color: #f0f0f0;
+        }
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+        }
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+        .description {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .description p {
+            font-size: 14px;
+            color: #444;
+        }
+        .description span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Lactate -->
+        <div class="category">
+            <h2>Lactate</h2>
+            <div class="product-grid">
+
+                <div class="product" onclick="toggleDescription('unt')">
+                    <img src="unt.jpeg" alt="unt" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Unt 🧈</h3>
+                    <p>35 lei/500g</p>
+                    <div id="unt" class="description">
+                        <p><span>Descriere:</span> Untul de Buzău este produs din lapte proaspăt de vacă sau de capră, având un gust cremos și o aromă naturală. Este folosit atât la gătit, cât și la prepararea diverselor feluri de pâine.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('smantana')">
+                  <img src="smantana.jpeg" alt="smantana" style="width: 100%; height: auto; border-radius: 5px;">
+  <h3>Smântână 🍶</h3>
+                    <p>18 lei/400ml</p>
+                    <div id="smantana" class="description">
+                        <p><span>Descriere:</span> Smântâna de Buzău este un produs autentic din lapte de vacă, folosită în preparatele tradiționale sau ca ingredient principal în diverse sosuri și supe.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('cascaval')">
+                   <img src="cascaval.jpeg" alt="cascaval" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Cașcaval 🧀</h3>
+                    <p>50 lei/kg</p>
+                    <div id="cascaval" class="description">
+                        <p><span>Descriere:</span> Cașcavalul din Buzău este un produs din lapte de vacă, ferm și cu o textură deosebită. Ideal pentru a fi folosit la sandwich-uri sau ca gustare în combinație cu legume.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('lapte')">
+                   <img src="lapte.jpeg" alt="lapte" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Lapte 🥛</h3>
+                    <p>4,5 lei/litru</p>
+                    <div id="lapte" class="description">
+                        <p><span>Descriere:</span> Laptele proaspăt de vacă din Buzău are o savoare naturală, fiind ideal pentru consumul zilnic. Acesta este bogat în proteine și nutrienți esențiali pentru organism.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('telemea_vaca')">
+           <img src="telemea de vaca.jpeg" alt="telemea de vaca" style="width: 100%; height: auto; border-radius: 5px;">          
+          <h3>Telemea de vacă 🧀</h3>
+                    <p>45 lei/kg</p>
+                    <div id="telemea_vaca" class="description">
+                        <p><span>Descriere:</span> Telemeaua de vacă este un produs lactat tradițional din Buzău, cu o textură ușor cremoasă și un gust sărat. Este folosită adesea în salate sau preparate calde, fiind un ingredient esențial în multe rețete românești.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('cas')">
+                  <img src="cas.jpeg" alt="cas" style="width: 100%; height: auto; border-radius: 5px;">                    
+<h3>Caș 🧀</h3>
+                    <p>30 lei/kg</p>
+                    <div id="cas" class="description">
+                        <p><span>Descriere:</span> Cașul de Buzău este un produs lactat proaspăt din lapte de vacă, cu un gust delicat și o consistență ușor granulară. Este perfect pentru diverse preparate tradiționale românești.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Băuturi -->
+        <div class="category">
+            <h2>Băuturi</h2>
+            <div class="product-grid">
+
+                <div class="product" onclick="toggleDescription('palinca')">
+                   <img src="palinca.jpeg" alt="palinca" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Pălincă 🍶</h3>
+                    <p>100 lei/litru</p>
+                    <div id="palinca" class="description">
+                        <p><span>Descriere:</span> Pălinca este o băutură tradițională din Buzău, obținută prin distilarea fructelor. Este cunoscută pentru aroma sa intensă și puterea sa alcoolică, fiind ideală pentru mesele de sărbătoare.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('tuica')">
+                  <img src="tuica.jpeg" alt="tuica" style="width: 100%; height: auto; border-radius: 5px;"> 
+                    <h3>Țuică 🍶</h3>
+                    <p>90 lei/litru</p>
+                    <div id="tuica" class="description">
+                        <p><span>Descriere:</span> Țuica de Buzău este o băutură tradițională preparată din prune sau pere, cu o aromă autentică și un gust ușor dulceag. Este consumată adesea ca aperitiv.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('visinata')">
+              <img src="visinata.jpeg" alt="visinata" style="width: 100%; height: auto; border-radius: 5px;">
+                    <h3>Vișinată 🍒</h3>
+                    <p>65 lei/litru</p>
+                    <div id="visinata" class="description">
+                        <p><span>Descriere:</span> Vișinata din Buzău este o băutură obținută prin macerarea vișinelor în alcool, cu un gust dulce-acrișor. Este preferată în sezonul cald, fiind un răcoritor natural.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('ciresata')">
+                   <img src="ciresata.jpeg" alt="ciresata" style="width: 100%; height: auto; border-radius: 5px;">
+                    <h3>Cireșată 🍒</h3>
+                    <p>70 lei/litru</p>
+                    <div id="ciresata" class="description">
+                        <p><span>Descriere:</span> Cireșata de Buzău este un lichior din cireșe, cu un gust fin și echilibrat. Este o băutură răcoritoare și parfumată, perfectă pentru mesele de familie.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('vin_alb')">
+            <img src="vin alb.jpeg" alt="vin alb" style="width: 100%; height: auto; border-radius: 5px;">                    
+<h3>Vin alb 🍇</h3>
+                    <p>40 lei/litru</p>
+                    <div id="vin_alb" class="description">
+                        <p><span>Descriere:</span> Vinul alb de Buzău este un vin sec sau demisec, cu o culoare clară și un gust echilibrat. Este ideal pentru a fi servit alături de preparate din pește sau brânzeturi.</p>
+                    </div>
+                </div>
+
+                <div class="product" onclick="toggleDescription('vin_merlot')">
+             <img src="vin de merlot.jpeg" alt="vin de merlot" style="width: 100%; height: auto; border-radius: 5px;">
+                    <h3>Vin de Merlot 🍷</h3>
+                    <p>50 lei/litru</p>
+                    <div id="vin_merlot" class="description">
+                        <p><span>Descriere:</span> Vinul de Merlot din Buzău este un vin roșu, cu o aromă de fructe roșii și o aciditate echilibrată. Este perfect pentru mesele de seară, alături de carne roșie sau brânzeturi maturate.</p>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+   <!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produse Tradiționale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .category h2 {
+            font-size: 24px;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .product:hover {
+            background-color: #f0f0f0;
+        }
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+        }
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+        .description {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .description p {
+            font-size: 14px;
+            color: #444;
+        }
+        .description span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Dulceață -->
+        <div class="category">
+            <h2>Dulceață</h2>
+            <div class="product-grid">
+                <div class="product" onclick="toggleDescription('dulceata_piersici')">
+                  <img src="Dulceață de piersici.jpeg" alt="Dulceață de piersici" style="width: 100%; height: auto; border-radius: 5px;">  
+                  <h3>Dulceață de piersici 🍑</h3>
+                    <p>35 lei/borcan</p>
+                    <div id="dulceata_piersici" class="description">
+                        <p><span>Descriere:</span> Dulceața de piersici este un produs natural, preparat din piersici coapte, cu un gust dulce și parfumat. Perfectă pentru clătite sau prăjituri.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('dulceata_visine')">
+                   <img src="Dulceață de vișine.jpeg" alt="Dulceață de vișine" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Dulceață de vișine 🍒</h3>
+                    <p>40 lei/borcan</p>
+                    <div id="dulceata_visine" class="description">
+                        <p><span>Descriere:</span> Dulceața de vișine este un deliciu acrișor, perfect pentru a adăuga un gust rafinat la deserturi sau pentru a fi savurată ca atare.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('dulceata_coacaze')">
+                   <img src="Dulceață de coacăze roșii.jpeg" alt="Dulceață de coacăze roșii" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Dulceață de coacăze roșii 🍇</h3>
+                    <p>38 lei/borcan</p>
+                    <div id="dulceata_coacaze" class="description">
+                        <p><span>Descriere:</span> Dulceața de coacăze roșii este dulce-acrișoară și oferă o savoare intensă, ideală pentru sandvișuri sau ca topping pe iaurt.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('dulceata_mere')">
+                    <img src="Dulceață de mere.jpeg" alt="Dulceață de mere" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Dulceață de mere 🍏</h3>
+                    <p>32 lei/borcan</p>
+                    <div id="dulceata_mere" class="description">
+                        <p><span>Descriere:</span> Dulceața de mere este o combinație perfectă între dulce și acrișor, cu un gust natural și proaspăt de mere coapte.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zacuscă -->
+        <div class="category">
+            <h2>Zacuscă</h2>
+            <div class="product-grid">
+                <div class="product" onclick="toggleDescription('zacusca_vinete')">
+                   <img src="Zacuscă de vinete.jpeg" alt="Zacuscă de vinete" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Zacuscă de vinete 🍆</h3>
+                    <p>25 lei/borcan</p>
+                    <div id="zacusca_vinete" class="description">
+                        <p><span>Descriere:</span> Zacusca de vinete este un preparat tradițional românesc, cu un gust ușor afumat și aromat, perfect pentru pâine prăjită.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('zacusca_ciuperci')">
+                   <img src="ciuperci.jpeg" alt="ciuperci" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Zacuscă de ciuperci 🍄</h3>
+                    <p>28 lei/borcan</p>
+                    <div id="zacusca_ciuperci" class="description">
+                        <p><span>Descriere:</span> Zacusca de ciuperci este un preparat delicios, cu ciuperci gătite lent, perfectă pentru un gust natural și savuros.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('zacusca_fasole')">
+                     <img src="Zacuscă de fasole.jpeg" alt="Zacuscă de fasole" style="width: 100%; height: auto; border-radius: 5px;">
+<h3>Zacuscă de fasole 🥄</h3>
+                    <p>22 lei/borcan</p>
+                    <div id="zacusca_fasole" class="description">
+                        <p><span>Descriere:</span> Zacusca de fasole este o variantă sățioasă a zacuscăi tradiționale, preparată cu fasole și legume din grădina locală.</p>
+                    </div>
+                </div>
+                <div class="product" onclick="toggleDescription('zacusca_ardei')">
+                   <img src="Zacuscă de ardei copți.jpeg" alt="Zacuscă de ardei copți" style="width: 100%; height: auto; border-radius: 5px;">
+ <h3>Zacuscă de ardei copți 🌶️</h3>
+                    <p>30 lei/borcan</p>
+                    <div id="zacusca_ardei" class="description">
+                        <p><span>Descriere:</span> Zacusca de ardei copți adaugă o notă picantă și aromată, perfectă pentru iubitorii de preparate cu un gust mai intens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Buzoiană</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Stilizarea secțiunii Contact cu chenar portocaliu și margini negre */
+        #contact {
+            background-color: #ffa500; /* Fundal portocaliu */
+            padding: 20px;
+            border: 5px solid black; /* Bordură exterioară neagră */
+            border-radius: 5px;
+            margin-top: 30px;
+            width: 100%; /* Ocupă întreaga lățime disponibilă */
+            box-sizing: border-box; /* Include padding-ul și border-ul în dimensiunile secțiunii */
+        }
+
+        #contact h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #contact p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #contact ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #contact ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        #contact a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Secțiunea Contact cu chenar portocaliu și margini negre -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Ne poți contacta la:</p>
+            <ul>
+                <li>Email: <a href="mailto:casabuzoiana2024@gmail.com">casabuzoiana2024@gmail.com</a></li>
+                <li>Telefon: <a href="tel:0238724247">0238724247</a></li>
+                <li>Adresă: George Emil Palade nr. 15</li>
+            </ul>
+            <p><strong>Social Media:</strong> <a href="https://www.instagram.com/casa.buzoiana" target="_blank">casa.buzoiana</a></p>
+        </section>
+    </div>
+</body>
+</html>
